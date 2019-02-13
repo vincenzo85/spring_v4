@@ -302,6 +302,8 @@ public class ConfigurationBean {
 		return trxManager;
 	}
 	
+	
+	
 	@Bean public LogServiceAspect logServiceAspect() {
 		return new LogServiceAspect();
 	}
