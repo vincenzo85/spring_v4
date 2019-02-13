@@ -47,6 +47,9 @@ import it.clever.spring.utils.RequiredTx;
 
 // se ho un metodo di lettura...  
 
+
+
+
 @Transactional(propagation=Propagation.REQUIRED)
 @RequiredTx
 public class OrderServiceImpl implements OrderService {
@@ -106,6 +109,11 @@ public class OrderServiceImpl implements OrderService {
 	// tra i parametri posso mettere roolbackfor... in transaction ...
 	
 	// non si usa... ma va bene lo stesso...
+	//@Transactional(propagation=Propagation.REQUIRED, 
+	// input ragionevole... questo metodo necessità per forza una transazione se lo richiamo in un metodo non transazionale...
+	// in un controller... quindi me la apre ... REALE
+	
+	// se lo apro in un metodo di un altro service già trasational.. quindi è logica...
 	
 	
 	
