@@ -50,7 +50,13 @@ import it.clever.spring.utils.DatabaseConfigBean;
 @Configuration("configBean")
 @EnableTransactionManagement
 @EnableAspectJAutoProxy
+// cerca le annotation .. nei vari pacchetti ... crea dei bean ove richiesto se prototipe ... lo crea alla richiesta...
+
 @ComponentScan(basePackages = { "it.clever.spring.*"})
+
+// configurazioni parametriche del....db... si carica in memoria le properties.... 
+// devo replicare con le annotation tutto quello che c'era nell'xml...
+// configurazione di startup ...è fatta me le sono caricate adesso le utilizzo...
 @PropertySources({ @PropertySource("classpath:/spring/database.properties") })
 public class ConfigurationBean {
 

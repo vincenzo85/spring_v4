@@ -25,6 +25,10 @@ public class ApplicationUI {
 		try {
 
 			// Caricamento del contesto e lettura delle configurazioni.
+			// Gli passiamo un .class una nostra classe per passargli le configunazioni
+			// Ce ne potrebbero essere di più di una 
+			
+			
 			context = new AnnotationConfigApplicationContext(ConfigurationBean.class);
 			
 			ApplicationUI ui = new ApplicationUI();
