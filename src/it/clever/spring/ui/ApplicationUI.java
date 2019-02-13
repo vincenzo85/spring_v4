@@ -15,7 +15,7 @@ import it.clever.spring.services.OrderService;
 import it.clever.spring.services.UserService;
 
 public class ApplicationUI {
-
+	// appplicazione desktop ... il contesto di spring lo sto creando
 	static AbstractApplicationContext  context = null;
 	
 	UserService userService;
@@ -34,7 +34,7 @@ public class ApplicationUI {
 			// Gli passiamo un .class una nostra classe per passargli le configunazioni
 			// Ce ne potrebbero essere di più di una 
 			
-			
+			// eccolo qui il contesto di spring... 
 			context = new AnnotationConfigApplicationContext(ConfigurationBean.class);
 			
 			ApplicationUI ui = new ApplicationUI();
