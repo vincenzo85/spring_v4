@@ -31,7 +31,7 @@ public class Order implements Serializable {
 	private Customer customer;
 
 	private int quantita;
-
+	// campo che mi permete di fare le transazioni ... legge per vedere quante volte è stato modificato...
 	@Version
 	private int version;
 

@@ -188,6 +188,8 @@ public class OrderServiceImpl implements OrderService {
 	@Override 
 	
 	// perchè transatione in lettura??
+	
+	
 	@Transactional(propagation=Propagation.NEVER)
 	public List<Order> loadAllOrders() {
 		return orderDao.findAll();

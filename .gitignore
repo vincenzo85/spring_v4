@@ -1,3 +1,6 @@
 *.class
 target/classes/it/clever/spring/config/ConfigurationBean.class
 target/*
+target/classes/it/clever/spring/config/ConfigurationBean.class
+target/classes/it/clever/spring/dao/impl/OrderDaoImpl.class
+target/classes/it/clever/spring/services/OrderServiceImpl.class
