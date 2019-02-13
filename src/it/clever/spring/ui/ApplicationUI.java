@@ -2,10 +2,13 @@ package it.clever.spring.ui;
 
 import java.util.List;
 
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.context.annotation.AnnotationConfigApplicationContext;
 import org.springframework.context.support.AbstractApplicationContext;
 
 import it.clever.spring.config.ConfigurationBean;
+import it.clever.spring.config.WSData;
 import it.clever.spring.entities.Order;
 import it.clever.spring.entities.Utente;
 import it.clever.spring.exception.AuthenticationException;
@@ -19,6 +22,10 @@ public class ApplicationUI {
 	UserService userService;
 	
 	OrderService orderService;
+	// questa classe nei progetti web sarà una classe di startup.... 
+	// prima con xml... facevamo load on startup 1..
+	// nella reference ... di spring trovi i due modi xml e annotation....
+	
 	
 	public static void main(String[] args) {
 		
@@ -54,6 +61,10 @@ public class ApplicationUI {
 		}
 		
 	}
+//	// esempio di come inittare quella classe li... di configuration bean.
+//	@Autowired 
+//	@Qualifier("puntamentiWsSos")
+//	public WSData puntamentiWsSos;
 	
 	/**
 	 * Metodo per l'autenticazione di un utente
