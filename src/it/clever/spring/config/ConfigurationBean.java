@@ -245,6 +245,45 @@ public class ConfigurationBean {
 	
 	// mi garatisce che una finito lo startup nel contesto ho tutto quello che mi serve...
 	
+	
+	// se devo fare una serie di operazioni sul db.... 
+	
+	// se voglio essere sicuro che tutto sia andato bene ... 
+	
+	// faccio una transazione.... 
+	
+	// se la cosa va male faccio la roolback per ripristinare la situazione iniziale...
+	
+	// le transazioni sono atomiche, una alla volta....
+	
+	// durante la transazione nessuno altro legge e scrive....
+	
+	// il db ha le sue regole.... 
+	
+	// il transaction manager del db ... 
+	
+	// myisam non gestisce la transazione
+	
+	// innodb gestisce la transazione... 
+	
+	// motore del db...
+	
+	// sql lite non gestisce le transazioni ... buono per applicazioni monoutente...
+	
+	// ho disabilitato lo spell checking ....
+	
+	
+	
+	/**
+	 * @author Vix
+	 * 
+	 *    factory-> entity manager -> connesione 
+	 * 
+	 *
+	 * 
+	 * @param emf
+	 * @return
+	 */
 	@Bean
 	public PlatformTransactionManager transactionManager(EntityManagerFactory emf) {
 		JpaTransactionManager trxManager = new JpaTransactionManager();

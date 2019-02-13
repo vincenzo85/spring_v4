@@ -2,3 +2,4 @@
 *.class
 *.class
 *.class
+target/classes/it/clever/spring/config/ConfigurationBean.class
