@@ -59,6 +59,42 @@ public class OrderServiceImpl implements OrderService {
 	 */
 	@Override
 	//@RequiredTx
+	
+	// metodo che scrive.... 
+	
+	// io devo inserire un nuovo ordine da un cliente esistente ....
+	
+	// inserita ... quantità e ammount....
+	
+	// le entità non vanno annotate ... non ha senso ... mettere autowired...
+	
+	// spring è utile per la gestione dei controller....
+	
+	// lo paghimo a livello di prestazioni...
+	
+	// le servlet senza spring fanno scrivere  più codice...
+	
+	// jdbc una valanga di codice ma è pià performante...
+	
+	// ci saranno un sacco di porting ... di servlet...
+	
+	// demo allora servlet...
+	
+	// una servlet un macchinino con un servizio stupido allora con la servlet... due secondi ... 
+	
+	// @transaction ... scatta una transazione... 
+	
+	// evento ... 
+	
+	// dummy event ... roolback...
+	
+	// fine del metodo ... transaction close
+	
+	
+	// gli ho messo una noRollbackFor ... dummyException...
+	
+	
+	
 	@Transactional(propagation=Propagation.REQUIRED, noRollbackFor=DummyException.class)
 	public Order createNewOrder(Long customerId, Long productId, int quantity, double amount) throws Exception {
 
@@ -82,8 +118,11 @@ public class OrderServiceImpl implements OrderService {
 
 			// Salvataggio dell'ordine.
 			orderDao.create(retOrder);
-
+			// sonora scemenza ... me lo sono inventato per farvi vedere che devo fare vdere due transazioni...
+			
 			// Aggiornamento del numero di ordini effettuati dal cliente.
+			
+			// se fallisce questa ... non metto l'ordine ...
 			customer.setNumOrders(1 + customer.getNumOrders());
 
 			// ATTENZIONE!!! Settaggio di un campo not nullable in modo da
@@ -93,11 +132,29 @@ public class OrderServiceImpl implements OrderService {
 //			customerDao = null;
 			
 			try {
-				
+				// provo a fare l'update di customer... 
 				customerDao.update(customer);
+				// se va male questa ....
+				
+				//avendo
+				
+				
+				//@Transactional(propagation=Propagation.REQUIRED, noRollbackFor=DummyException.class)
+				
+				// ovvero 
+				
+				// noRollbackFor=DummyException.class 
+				
+				// se va male questa .... non va in roolback....
+				
 			} catch (Exception e) {
 				// TODO: handle exception
 				throw new DummyException("Numero ordini non aggiornato ma ordine inserito.");
+				// automaticamente non fa la rool back ....
+				
+				// questo ... mi permette di sfuggire dalla roolback se ho eccessioni su cose che non mi interessano
+				
+				
 			}
 
 			
