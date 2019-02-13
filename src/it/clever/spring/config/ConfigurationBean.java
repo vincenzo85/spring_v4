@@ -272,6 +272,13 @@ public class ConfigurationBean {
 	
 	// ho disabilitato lo spell checking ....
 	
+	// più permango in macchina a fare una transazione più pericolo c'è che faccio danni leggendo e scrivendo che va a pestare i piedi
+	
+	// una transazione è possibilmente molto grossa ...
+	
+	// potrebbe durare molto tempo...
+	
+	
 	
 	
 	/**
