@@ -105,6 +105,10 @@ public class ConfigurationBean {
 	// url di servizi remoti... sono dei java bean ... 
 	// non sono annotati...
 	@Bean("puntamentiWsSOS")
+	
+	// non bisogna fare la new di una classe annotata... questa è una classe non annotata...  se guaardo WSDAta....
+	// adesso è chiamata puntamentiWsSOS.... 
+	
 	public WSData getWsDataSos() {
 		WSData ws = new WSData();
 		ws.setWebserviceUrl(persistenceUnitName);
@@ -130,6 +134,8 @@ public class ConfigurationBean {
 	@Bean
 	public LocalContainerEntityManagerFactoryBean getEntityManagerFactoryBean() {
 
+		// di questo faccio la new perchè non è annotata.... 
+		
 		LocalContainerEntityManagerFactoryBean em = new LocalContainerEntityManagerFactoryBean();
 		
 		// Specifico qual'è la persistence unit

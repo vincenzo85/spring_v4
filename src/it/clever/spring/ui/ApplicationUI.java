@@ -2,13 +2,12 @@ package it.clever.spring.ui;
 
 import java.util.List;
 
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.beans.factory.annotation.Qualifier;
+
 import org.springframework.context.annotation.AnnotationConfigApplicationContext;
 import org.springframework.context.support.AbstractApplicationContext;
 
 import it.clever.spring.config.ConfigurationBean;
-import it.clever.spring.config.WSData;
+
 import it.clever.spring.entities.Order;
 import it.clever.spring.entities.Utente;
 import it.clever.spring.exception.AuthenticationException;
@@ -61,7 +60,7 @@ public class ApplicationUI {
 		}
 		
 	}
-//	// esempio di come inittare quella classe li... di configuration bean.
+//	// esempio di come iniettare quella classe li... di configuration bean.
 //	@Autowired 
 //	@Qualifier("puntamentiWsSos")
 //	public WSData puntamentiWsSos;
