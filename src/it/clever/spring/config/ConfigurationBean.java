@@ -120,6 +120,13 @@ public class ConfigurationBean {
 	// nel controller devo fare l'injection di queste .... sono due instanza di questa classe  parla di puntamentiws riga 107 
 	// riga 97.... 
 	
+	// potrei avere n ...file di configurazione .... fa vedere del progetto web Authorization security .... del progetto web...
+	
+	// le chiami allo startup.... 
+	
+	// la classe configuration ... servono per dire al contesto dell'applicazione per attivare tutte i metodi con bean.... 
+	
+	
 	@Bean
 	public LocalContainerEntityManagerFactoryBean getEntityManagerFactoryBean() {
 
