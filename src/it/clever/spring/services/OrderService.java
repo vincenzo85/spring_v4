@@ -47,11 +47,7 @@ import it.clever.spring.utils.RequiredTx;
 //	System.out.println("******");
 //
 //}
-
 // del file logserviceAspect... 
-
-
-
 public interface OrderService extends LoggableAopService {
 
 	public Order createNewOrder(Long customerId, Long productId, int quantity, double amount) throws Exception;

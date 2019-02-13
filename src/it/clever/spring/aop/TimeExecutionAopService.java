@@ -37,9 +37,14 @@ public class TimeExecutionAopService {
 	@Around("@annotation(LogExecutionTime)")
 	public Object logExecutionTime(ProceedingJoinPoint joinPoint) throws Throwable {
 	    long start = System.currentTimeMillis();
-	 
+	    
+	    
+	    // vai ... procedi....
+	    
 	    Object proceed = joinPoint.proceed();
-	 
+	    // .. fa il return ....
+	    
+	    
 	    long executionTime = System.currentTimeMillis() - start;
 	 
 	    System.out.println(joinPoint.getSignature() + " executed in " + executionTime + "ms");
