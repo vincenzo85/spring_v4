@@ -12,6 +12,7 @@ package it.clever.spring.config;
 import java.util.Properties;
 
 import javax.persistence.EntityManagerFactory;
+import javax.persistence.EntityTransaction;
 import javax.sql.DataSource;
 
 import org.springframework.beans.factory.annotation.Value;
@@ -30,6 +31,7 @@ import org.springframework.transaction.PlatformTransactionManager;
 import org.springframework.transaction.annotation.EnableTransactionManagement;
 
 import it.clever.spring.aop.LogServiceAspect;
+import it.clever.spring.entities.Order;
 import it.clever.spring.utils.DatabaseConfigBean;
 
 
@@ -175,6 +177,7 @@ public class ConfigurationBean {
 		datasource.setDatabaseUrl(databaseUrl);
 		datasource.setPesistenceUnitName(persistenceUnitName);
 		return datasource;
+		
 	}
 
 	/**
@@ -204,7 +207,44 @@ public class ConfigurationBean {
 		properties.setProperty("hibernate.show_sql", showSql);
 		return properties;
 	}
-
+	// entity manager dentro i dao... 
+	// gestire le transazione... 
+	
+	// dentro al dao v3 ... ho un tray catch per fare rollback .... 
+	
+//	public void save(Order order) {
+//
+//		EntityTransaction trx = null;
+//		try {
+//
+//			trx = em.getTransaction();
+//			trx.begin();
+//
+//			em.persist(order);
+//			em.flush();
+//
+//			trx.commit();
+//
+//		} catch (Exception e) {
+//			e.printStackTrace();
+//			trx.rollback();
+//		} finally {
+//			if (em != null) {
+//				em.close();
+//			}
+//
+//		}
+//	}
+	
+	// spring ci fornisce una classe che gestisce le transazioni in automatico...
+	// rilasciare verso il contesto un instanza di platform transation manager factory...
+	
+	// transaction è un metodo di call back che non chiamiamo noi ...
+	
+	// ho già creato nel contesto l'entity manager factory...
+	
+	// mi garatisce che una finito lo startup nel contesto ho tutto quello che mi serve...
+	
 	@Bean
 	public PlatformTransactionManager transactionManager(EntityManagerFactory emf) {
 		JpaTransactionManager trxManager = new JpaTransactionManager();
