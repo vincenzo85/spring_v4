@@ -37,6 +37,16 @@ import it.clever.spring.utils.RequiredTx;
 //@Transactional(propagation=Propagation.MANDATORY)
 //@Transactional(propagation=Propagation.REQUIRES_NEW)
 //@Transactional(propagation=Propagation.NEVER)
+
+
+// transazionalità due opzioni... ogni singolo metodo ... oppure sulla classe... 
+
+// cosi tutti i metodi si impostano la transationalità ...
+
+// nel metodo lo specifico meglio ...se ha bisogno di cose semplici
+
+// se ho un metodo di lettura...  
+
 @Transactional(propagation=Propagation.REQUIRED)
 @RequiredTx
 public class OrderServiceImpl implements OrderService {
@@ -92,6 +102,10 @@ public class OrderServiceImpl implements OrderService {
 	
 	
 	// gli ho messo una noRollbackFor ... dummyException...
+	
+	// tra i parametri posso mettere roolbackfor... in transaction ...
+	
+	// non si usa... ma va bene lo stesso...
 	
 	
 	
@@ -172,6 +186,8 @@ public class OrderServiceImpl implements OrderService {
 
 	@LogExecutionTime
 	@Override 
+	
+	// perchè transatione in lettura??
 	@Transactional(propagation=Propagation.NEVER)
 	public List<Order> loadAllOrders() {
 		return orderDao.findAll();
