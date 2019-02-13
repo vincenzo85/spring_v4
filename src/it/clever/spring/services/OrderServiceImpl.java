@@ -34,8 +34,17 @@ import it.clever.spring.utils.RequiredTx;
  *
  */
 @Service(value = "orderService")
+
+// devo essere inclusa in un metodo transazionale...
 //@Transactional(propagation=Propagation.MANDATORY)
+
+// vogio una transazione fisica che va per i fatti suoi ...
+
+
+
 //@Transactional(propagation=Propagation.REQUIRES_NEW)
+
+// non voglio una transationale
 //@Transactional(propagation=Propagation.NEVER)
 
 
@@ -115,7 +124,7 @@ public class OrderServiceImpl implements OrderService {
 	
 	// se lo apro in un metodo di un altro service già trasational.. quindi è logica...
 	
-	
+	// 
 	
 	@Transactional(propagation=Propagation.REQUIRED, noRollbackFor=DummyException.class)
 	public Order createNewOrder(Long customerId, Long productId, int quantity, double amount) throws Exception {
