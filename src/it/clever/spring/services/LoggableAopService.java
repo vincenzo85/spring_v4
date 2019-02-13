@@ -13,6 +13,9 @@ package it.clever.spring.services;
  * @author robgion
  *
  */
+
+// INTERFACCIA DA IMPLEMENTARE .... PER AVERE IL POINTCUT
+
 public interface LoggableAopService {
 
 }

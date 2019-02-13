@@ -22,14 +22,33 @@ import org.springframework.stereotype.Component;
  * @author robgion
  *
  */
+
+// è un gestore di eventi...in attesa di un evento 
+
+// quale evento??
+
 @Aspect
 @Component
+// ha uno scope singleton 
 @Scope(value = "singleton")
 public class LogServiceAspect {
 
+	
+	// definisco i pointcut ... punti di intervento ...
+	
+	// in cui si deve svegliare... 
+	
+	// un target .... 
+	
+	
+	// prima e dopo di una classe che implementa l'interfaccia... Loggable...
+	
+	
+	
+	
 	@Pointcut("target(it.clever.spring.services.LoggableAopService)")
 	public void logPointCut() {}
-
+	// prima 
 	@Before("logPointCut()")
 	public void logBefore(JoinPoint joinPoint) {
 
@@ -37,6 +56,8 @@ public class LogServiceAspect {
 		System.out.println("hijacked : " + joinPoint.getSignature().getName());
 		System.out.println("******");
 	}
+	
+	// dopo... 
 
 	@After("logPointCut()")
 	public void logAfter(JoinPoint joinPoint) {
