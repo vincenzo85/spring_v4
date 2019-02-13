@@ -131,6 +131,8 @@ public class OrderDaoImpl extends GenericDaoImpl<Order> implements OrderDao {
 		return orders;
 	}
 
+	
+	// transactional mi gestisce la transazione.... 
 	@Transactional
 	public void save(Order order) {
 

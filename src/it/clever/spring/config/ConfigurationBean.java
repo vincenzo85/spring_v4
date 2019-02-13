@@ -50,6 +50,7 @@ import it.clever.spring.utils.DatabaseConfigBean;
 
 
 @Configuration("configBean")
+// gli diamo la possibilità di gestirsi le transazioni...
 @EnableTransactionManagement
 @EnableAspectJAutoProxy
 // cerca le annotation .. nei vari pacchetti ... crea dei bean ove richiesto se prototipe ... lo crea alla richiesta...
