@@ -32,10 +32,21 @@ import org.springframework.transaction.annotation.EnableTransactionManagement;
 import it.clever.spring.aop.LogServiceAspect;
 import it.clever.spring.utils.DatabaseConfigBean;
 
+
+
+
+
 /**
  * @author robgion
+ * 
+ * 
+ * abbiamo la possibilità di iniettare i dao 
+ * @autovired dell' entity manager non si può fare
+ * 
  *
  */
+
+
 @Configuration("configBean")
 @EnableTransactionManagement
 @EnableAspectJAutoProxy
@@ -44,6 +55,15 @@ import it.clever.spring.utils.DatabaseConfigBean;
 public class ConfigurationBean {
 
 	/** Parametri connessione database. */
+	// lo posso mettere dentro un file di property esterno .... le connessioni al dv il driver la persistent unit di jpa... 
+	// più altre configurazioni che mettevamo nel xml
+	// quello di nuovo è la classe configurationBean 
+	
+	// deve essere connotata con @Configuration ... potrei farne l'autowired ma mi serve solo allo startup ... 
+	// se gliela passassi potrei comprometterla ... attraverso i setter ad esempio...
+	
+	
+	
 	@Value("${database.url}")
 	private String databaseUrl;
 	
