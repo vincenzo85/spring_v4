@@ -91,6 +91,9 @@ public class ConfigurationBean {
 
 	@Value("${hibernate.dialect}")
 	private String databaseDialect;
+	
+	@Value("S{jpa.entity}")
+	private String entityjpa;
 
 	@Bean("puntamentiWsCDM")
 	public WSData getWsData() {
@@ -115,6 +118,10 @@ public class ConfigurationBean {
 		return ws;
 	}
 	
+	// posso crearmi il jpa utils ...? .... 
+	// iniettarlo dentro i dao.... 
+	// no faccio qualcosa di meglio ... mi prendo solo un pezzetto... 
+	
 	
 	// importanza dell'annotation bean, cosa fa? lo rende innietabile, messo in genere alle classi di configurazione...
 	// va a vedere i metodi annotati con bean e li chiama... holliwood princible... li chiama lui ... 
@@ -135,6 +142,12 @@ public class ConfigurationBean {
 	public LocalContainerEntityManagerFactoryBean getEntityManagerFactoryBean() {
 
 		// di questo faccio la new perchè non è annotata.... 
+		// me ne accorgo perchè faccio la new,
+		// me la creo. 
+		// cosa fa questa ?
+		// alimentata con dataSource... 
+		// gli setto la persistentUnitName ...
+		// gli setto il package to scan... 
 		
 		LocalContainerEntityManagerFactoryBean em = new LocalContainerEntityManagerFactoryBean();
 		
@@ -143,9 +156,9 @@ public class ConfigurationBean {
 
 		// Setto tutte le info per la connession
 		em.setDataSource(dataSource());
-		
-		em.setPackagesToScan(new String[] { "it.clever.spring.entities" });
-
+		// le entity....  di cui fare lo scan... url delle classi....
+		em.setPackagesToScan(new String[] { entityjpa  });
+		// 
 		JpaVendorAdapter vendorAdapter = new HibernateJpaVendorAdapter();
 		em.setJpaVendorAdapter(vendorAdapter);
 		em.setJpaProperties(additionalProperties());
