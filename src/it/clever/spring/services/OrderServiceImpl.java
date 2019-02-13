@@ -188,7 +188,9 @@ public class OrderServiceImpl implements OrderService {
 	@Override 
 	
 	// perchè transatione in lettura??
-	
+	// gli altri metodi .. ... 
+	// tipo di transazione ... propagation ... never non la voglio! ... 
+	// .... 
 	
 	@Transactional(propagation=Propagation.NEVER)
 	public List<Order> loadAllOrders() {
