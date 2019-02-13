@@ -30,9 +30,22 @@ import it.clever.spring.exception.DummyException;
  * 
  * 2. l'operazione non esegue il rollback per eccezioni del tipo DummyException.
  */
+
+// dove va questa ? sul metodo o sulla classe ? ... (la classe sarebbe il tipo ...
+
 @Target({ElementType.METHOD, ElementType.TYPE})
+
+// quando viene eseguita ? ... retention .... presa in considerazione a run time 
+
+
+// costruita per portarmi dietro un set di configurazioni di spring ....
 @Retention(RetentionPolicy.RUNTIME)
+
+// la esegue ogni volta che vede sul metodo @RequiredTx .... 
+
 @Transactional(propagation=Propagation.REQUIRED, noRollbackFor=DummyException.class)
 public @interface RequiredTx {
 
+	
+	
 }

@@ -124,7 +124,7 @@ public class OrderServiceImpl implements OrderService {
 	
 	// se lo apro in un metodo di un altro service già trasational.. quindi è logica...
 	
-	// 
+	// costruisco la mia annotation ... 
 	
 	@Transactional(propagation=Propagation.REQUIRED, noRollbackFor=DummyException.class)
 	public Order createNewOrder(Long customerId, Long productId, int quantity, double amount) throws Exception {
