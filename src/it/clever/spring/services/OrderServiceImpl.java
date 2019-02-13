@@ -200,7 +200,10 @@ public class OrderServiceImpl implements OrderService {
 
 		return retOrder;
 	}
-
+	
+	
+	// quanto ci mette ??? ... eccola qui la mia annotation...
+	//messa solo sul metodo
 	@LogExecutionTime
 	@Override 
 	

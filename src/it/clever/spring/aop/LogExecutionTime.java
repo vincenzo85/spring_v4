@@ -19,6 +19,10 @@ import java.lang.annotation.Target;
  * @Target(ElementType.METHOD): Annotazione che può essere apposta solamente su metodi
  * @Retention(RetentionPolicy.RUNTIME): disponibile nella JVM a runtime
  */
+
+
+// il metodo non lo metti qui .... lo metti in time ex
+
 @Target(ElementType.METHOD)
 @Retention(RetentionPolicy.RUNTIME)
 public @interface LogExecutionTime {

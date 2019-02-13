@@ -21,7 +21,19 @@ import org.springframework.stereotype.Component;
 @Aspect
 @Component
 public class TimeExecutionAopService {
-
+// avvolge il metodo ... entrando in merito all'esecuzione
+	// fai business intellingence.... 
+	
+	// ASP .... tutte le volte che vedi l'annotazione LogExecutionTIme... 
+	
+	// quando inizia e quando finisce mi setta ... i ms di esecuzione.... 
+	
+	// lo avvolgo ... 
+	
+	// posso pilotare o meno l'esecuzione del metodo...
+	
+	
+	
 	@Around("@annotation(LogExecutionTime)")
 	public Object logExecutionTime(ProceedingJoinPoint joinPoint) throws Throwable {
 	    long start = System.currentTimeMillis();
